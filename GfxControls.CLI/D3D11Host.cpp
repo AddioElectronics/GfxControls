@@ -8,17 +8,17 @@ namespace GfxControls::CLI
 {
 	D3D11Host::D3D11Host() { }
 
-	D3D11Host::D3D11Host(IntPtr parentHwnd, UINT width, UINT height)
+	D3D11Host::D3D11Host(IntPtr parentHwnd, UINT width, UINT height, bool forwardMessages)
 	{
 		this->_width = width;
 		this->_height = height;
-		
+
 		try
 		{
 			this->_width = width;
 			this->_height = height;
 
-			this->_native = new GfxControls::Native::D3D11HostNative((HWND)parentHwnd.ToPointer(), width, height);
+			this->_native = new GfxControls::Native::D3D11HostNative((HWND)parentHwnd.ToPointer(), width, height, forwardMessages);
 			this->_hWnd = _native->GetHWND();
 			_rendering = true;
 		}

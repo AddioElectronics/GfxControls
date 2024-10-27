@@ -7,22 +7,9 @@ _The code was taken from the [SharpDX samples](https://github.com/sharpdx/SharpD
 
  ## Overview
 
-### XAML
-
-The **GfxControls.WPF** assembly and `GfxControls.WPF.DirectX` namespace is referenced in the `Window` element.
-```xml
-xmlns:DirectX="clr-namespace:GfxControls.WPF.DirectX;assembly=GfxControls.WPF"
-```
-
-The `D3D11Host` control is added to the XAML layout as follows:
-
-```xml
-<DirectX:D3D11Host x:Name="dxHost" />
-```
-
 ### Initialization of the D3D11Host
 
-`D3D11Host` derives from `System.Windows.Interop.HwndHost`, which will automatically initialize the native window and DirectX.
+`D3D11Host` derives from `System.Windows.Forms.Control`, which will automatically initialize the native window and DirectX.
 
 When `D3D11Host.IsDXInitialized` evaluates to true, the native DirectX pointers can be accessed to start rendering.
 Another option is to subscribe to the `D3D11Host.DXInitialized` event.
@@ -56,17 +43,19 @@ private void DxWindow_WindowCreated(object? sender, EventArgs e)
 
 private void Initialize()
 {
-	width = (int)dxHost.ActualWidth;
-	height = (int)dxHost.ActualHeight;
-
     stopwatch = new Stopwatch();
     stopwatch.Start();
 
-    dxHost.Resized += DxHost_Resized;
-    dxHost.MouseMove += DxHost_MouseMove;
-    dxHost.MouseWheel += DxHost_MouseWheel;
+    dxHost.SizeChanged += DxHost_SizeChanged;
+	dxHost.MouseMove += DxHost_MouseMove;
+	dxHost.MouseWheel += DxHost_MouseWheel;
 
     InitializeGraphics();
+}
+
+private void DxHost_SizeChanged(object? sender, EventArgs e)
+{
+    userResized = true;
 }
 ```
 

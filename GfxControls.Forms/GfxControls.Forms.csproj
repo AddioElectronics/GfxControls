@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWindowsForms>true</UseWindowsForms>
+		<Configurations>Debug;Release;Debug_net6.0;Debug_netcore3.1;Debug_v4.7;Release_net6.0;Release_v4.7;Release_netcore3.1;Debug_NetCore;Release_NetCore</Configurations>
+		<LangVersion>12</LangVersion>
+		<Platforms>x64;x86</Platforms>
+		<BaseOutputPath>$(SolutionDir)bin</BaseOutputPath>
+		<SignAssembly>False</SignAssembly>
+		<Title>$(ProjectName)</Title>
+		<Company>Addio Electronics, Xorrupt</Company>
+		<Authors>Addio</Authors>
+		<AssemblyName>$(ProjectName)</AssemblyName>
+		<Description>UI controls for embedding a DirectX, OpenGL, or other graphics API window within a WPF application.</Description>
+		<PackageProjectUrl>https://github.com/AddioElectronics/GfxControls</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/AddioElectronics/GfxControls</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>WPF, DX, DirectX, D3D, D3D11, 11, DX11, Control, Host, Embed, Window, DXGI, GL, GFX, UI, OpenGL, SharpDX, OpenTK, Vulkan</PackageTags>
+		<AssemblyVersion>0.1.1.0</AssemblyVersion>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<Product>GfxControls</Product>
+	</PropertyGroup>
+
+	<!-- Target .NET 8 for Debug and Release -->
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug' or '$(Configuration)' == 'Release'">
+		<TargetFramework>net8.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<!-- Target .NET 6 for Debug and Release -->
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug_net6.0' or '$(Configuration)' == 'Release_net6.0'">
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<!-- Target .NET Core 3.1 for Debug_Core3.1 and Release_netcore3.1 -->
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug_netcore3.1' or '$(Configuration)' == 'Release_netcore3.1'">
+		<TargetFramework>netcoreapp3.1-windows</TargetFramework>
+	</PropertyGroup>
+
+	<!-- Target .NET Framework 4.7 for Debug_v4.7 and Release_v4.7 -->
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug_v4.7' or '$(Configuration)' == 'Release_v4.7'">
+		<TargetFramework>net47</TargetFramework>
+	</PropertyGroup>
+
+	<!-- Target All .NET Core frameworks for Debug_NetCore and Release_NetCore -->
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug_NetCore' or '$(Configuration)' == 'Release_NetCore'">
+		<TargetFrameworks>net8.0-windows;net6.0-windows;netcoreapp3.1-windows</TargetFrameworks>
+	</PropertyGroup>
+	<Import Project="..\GfxControls.Shared\GfxControls.Shared.projitems" Label="Shared" />
+	<ItemGroup>
+	  <ProjectReference Include="..\GfxControls.CLI\GfxControls.CLI.vcxproj" />
+	</ItemGroup>
+</Project>

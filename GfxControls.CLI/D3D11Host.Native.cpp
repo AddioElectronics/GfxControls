@@ -32,24 +32,28 @@ namespace GfxControls::Native
     {
         switch (msg)
         {
-        case WM_DESTROY:
-            PostQuitMessage(0);
-            break;
+        //case WM_DESTROY:
+        //    PostQuitMessage(0);
+        //    break;
         default:
+            if (_forwardMessages) {
+                SendMessage(_parentHWnd, msg, wParam, lParam);
+            }
+            //PostMessageW(_parentHWnd, msg, wParam, lParam);
             return DefWindowProc(hWnd, msg, wParam, lParam);
-            break;
         }
 
         return 0;
     }
 
-    D3D11HostNative::D3D11HostNative(HWND parentHWnd, UINT width, UINT height)
+    D3D11HostNative::D3D11HostNative(HWND parentHWnd, UINT width, UINT height, bool forwardMessages)
     {
         HINSTANCE hInstance = GetModuleHandle(NULL);
         if (!hInstance) {
             throw std::exception("Failed to get module handle.");
         }
-
+        _parentHWnd = parentHWnd;
+        _forwardMessages = forwardMessages;
         _width = width;
         _height = height;
         //_wndProc = wndProc;

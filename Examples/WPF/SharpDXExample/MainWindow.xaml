@@ -6,18 +6,19 @@
         xmlns:local="clr-namespace:Example1"
         xmlns:DirectX="clr-namespace:GfxControls.WPF.DirectX;assembly=GfxControls.WPF"
         mc:Ignorable="d"
-        Title="D3D11Host SharpDX Example" Height="450" Width="800">
+        Title="D3D11Host SharpDX WPF Example" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="147*"/>
+            <ColumnDefinition Width="653*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="LabelTop" Text="Example1: Rotating Cube" FontSize="16" HorizontalAlignment="Center"/>
-        <DirectX:D3D11Host x:Name="dxHost" Grid.Row="1" />
-        <TextBlock x:Name="LabelBottom" Text="" Grid.Row="2" FontSize="16" HorizontalAlignment="Center" />
+        <TextBlock x:Name="LabelTop" Text="SharpDX WPF Example" FontSize="16" HorizontalAlignment="Left" Grid.Column="1" Margin="173,0,0,0"/>
+        <DirectX:D3D11Host x:Name="dxHost" Grid.Row="1" Grid.ColumnSpan="2" />
+        <TextBlock x:Name="LabelBottom" Text="" Grid.Row="1" FontSize="16" HorizontalAlignment="Left" Grid.Column="1" Margin="253,374,0,0" Grid.RowSpan="2" />
     </Grid>
 </Window>

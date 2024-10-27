@@ -2,7 +2,7 @@
 
 **GfxControls** is a lightweight C# library containing WPF and WinForms controls that enables embedding a DirectX, OpenGL, and Vulkan windows within an application.
 
-**Note:** _Only DirectX via WPF is currently available._
+**Note:** _Only DirectX is currently available._
 
 ## Getting Started
 
@@ -12,7 +12,7 @@
    Reference `GfxControls.WPF.dll` or `GfxControls.Forms.dll` in your project.
 
 2. **Add the Control in XAML**  
-   Include `GfxControls.WPF.DirectX.D3D11Host` in your XAML file.
+   Include `GfxControls.WPF/Forms.DirectX.D3D11Host` in your XAML file.
 
 3. **Initialize DirectX**  
    Wait for `D3D11Host.IsDXInitialized` to be **true** or subscribe to the `D3D11Host.DXInitialized` event before accessing DirectX resources.
@@ -43,7 +43,8 @@ SharpDX.Direct3D11.DeviceContext context = ComObject.FromPointer<SharpDX.Direct3
 ```
 
 **Explore These Example Projects**:
-- [WPF SharpDX Example](https://github.com/AddioElectronics/GfxControls/Examples/SharpDXExample)
+- [WPF SharpDX Example](https://github.com/AddioElectronics/GfxControls/Examples/WPF/SharpDXExample)
+- [WinForms SharpDX Example](https://github.com/AddioElectronics/GfxControls/Examples/WinForms/SharpDXExample)
 - **WPF CLI Example** _(Coming Soon)_
 
 ### OpenGL
@@ -74,7 +75,9 @@ SharpDX.Direct3D11.DeviceContext context = ComObject.FromPointer<SharpDX.Direct3
 
 ### Notes for Switching Between Framework Configurations
 
-The CLI project might not build after changing configurations or frameworks. Here’s how to resolve the build issues:
+**Warning**: This is now handled using **OnConfigChange.targets**, be aware if importing **GfxControls.CLI.vcxproj** to another solution, as files/folders are deleted relative to `$(SolutionDir)`.
+
+If the **GfxControls.CLI** does not build after changing configurations or frameworks, try the following steps:
 - **Clean the Project** in Visual Studio (`GfxControls.CLI` > `Clean`).
 - **Restore NuGet Packages** using MSBuild.
 - **Reload the Project** in Visual Studio to ensure settings are updated.

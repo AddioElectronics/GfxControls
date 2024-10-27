@@ -2,6 +2,7 @@
 
 namespace GfxControls
 {
+	[System::Runtime::InteropServices::StructLayout(System::Runtime::InteropServices::LayoutKind::Sequential)]
 	public value struct Size
 	{
 	private:

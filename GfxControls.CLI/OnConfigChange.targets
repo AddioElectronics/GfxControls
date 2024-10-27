@@ -1,0 +1,94 @@
+<Project>
+	<PropertyGroup>
+		<!-- Define a path for storing the previous configuration -->
+		<VisualStudioCmdPrompt>$(VSINSTALLDIR)VC\Auxiliary\Build\vcvarsall.bat</VisualStudioCmdPrompt>
+		<PreviousConfigurationFile>$(SolutionDir)ConfigCache\PreviousConfig.txt</PreviousConfigurationFile>
+	</PropertyGroup>
+	
+	<Target Name="CLIOnConfigChangePreBuild" BeforeTargets="ResolvePackageAssets;ResolveNuGetPackageAssets">
+		<Message Text="Test" Importance="high"/>
+		
+		<!-- Initialize configuration changed property -->
+		<PropertyGroup>
+			<_IsConfigurationChanged>false</_IsConfigurationChanged>
+		</PropertyGroup>
+
+		<!-- Check if PreviousConfigurationFile exists and read its content -->
+		<ReadLinesFromFile File="$(PreviousConfigurationFile)">
+			<Output TaskParameter="Lines" PropertyName="_PreviousConfiguration" />
+		</ReadLinesFromFile>
+
+		<!-- Set _IsConfigurationChanged if the configuration has changed -->
+		<PropertyGroup>
+			<_IsConfigurationChanged Condition="'$(_PreviousConfiguration)' != '$(Configuration)'">true</_IsConfigurationChanged>
+		</PropertyGroup>
+
+
+		<!-- Restore CLI Project Nuget Package -->
+		<Message Text="Cleaning Previous Configuration's Files. &quot;$(SolutionDir)bin\x64&quot;"
+				 Importance="high"
+				 Condition="'$(_IsConfigurationChanged)' == 'true'"/>
+
+		<!-- Clean binaries-->
+		<Message Text="Deleting bin files"
+				 Importance="high"
+				 Condition="'$(_IsConfigurationChanged)' == 'true'"/>
+
+		<Exec Command="rmdir /s /q &quot;$(SolutionDir)bin\x64&quot;" 
+				 Condition="'$(_IsConfigurationChanged)' == 'true'" />
+
+		<Exec Command="rmdir /s /q &quot;$(SolutionDir)bin\x86&quot;"
+				 Condition="'$(_IsConfigurationChanged)' == 'true'" />
+
+
+		<!-- Clean CLI Project-->
+		<Message Text="Cleaning CLI intermediate directories"
+				 Importance="high"
+				 Condition="'$(_IsConfigurationChanged)' == 'true'"/>
+		
+		<Exec Command="rmdir /s /q &quot;$(SolutionDir)GfxControls.CLI\obj&quot;"
+				 Condition="'$(_IsConfigurationChanged)' == 'true'" />
+
+		<Exec Command="rmdir /s /q &quot;$(SolutionDir)GfxControls.CLI\GfxControls.CLI&quot;"
+				 Condition="'$(_IsConfigurationChanged)' == 'true'" />
+
+		<Exec Command="rmdir /s /q &quot;$(SolutionDir)GfxControls.CLI\NetFramework&quot;"
+				 Condition="'$(_IsConfigurationChanged)' == 'true'" />
+
+		<Exec Command="rmdir /s /q &quot;$(SolutionDir)GfxControls.CLI\x64&quot;"
+				 Condition="'$(_IsConfigurationChanged)' == 'true'" />
+
+		<Exec Command="rmdir /s /q &quot;$(SolutionDir)GfxControls.CLI\x86&quot;"
+				 Condition="'$(_IsConfigurationChanged)' == 'true'" />
+		
+		<!--<RemoveDir Directories="&quot;$(SolutionDir)GfxControls.CLI\obj&quot;"
+				   Condition="'$(_IsConfigurationChanged)' == 'true'"/>-->
+		
+		<!--<MSBuild Projects="$(SolutionDir)GfxControls.CLI\GfxControls.CLI.vcxproj" Targets="Clean"
+				 Condition="'$(_IsConfigurationChanged)' == 'true'" />-->
+
+		<!--<Message Text="Executing &quot;$(VisualStudioCmdPrompt)&quot; x64 &amp;&amp; msbuild &quot;$(SolutionDir)GfxControls.CLI\GfxControls.CLI.vcxproj&quot; /t:Clean"
+				 Importance="high"
+				 Condition="'$(_IsConfigurationChanged)' == 'true'"/>
+		<Exec Command="&quot;$(VisualStudioCmdPrompt)&quot; x64 &amp;&amp; msbuild &quot;$(SolutionDir)GfxControls.CLI\GfxControls.CLI.vcxproj&quot; /t:Clean"
+			  Condition="'$(_IsConfigurationChanged)' == 'true'" />-->
+
+		
+		<!-- Restore CLI Project Nuget Package -->
+		<Message Text="Restore CLI project nuget packages"
+				 Importance="high"
+				 Condition="'$(_IsConfigurationChanged)' == 'true'"/>
+
+		<MSBuild Projects="$(SolutionDir)GfxControls.CLI\GfxControls.CLI.vcxproj" Targets="Restore"
+				 Condition="'$(_IsConfigurationChanged)' == 'true'"/>
+		
+		<!--<Exec Command="&quot;$(VisualStudioCmdPrompt)&quot; x64 &amp;&amp; msbuild &quot;$(SolutionDir)GfxControls.CLI\GfxControls.CLI.vcxproj&quot; /t:Restore"
+			  Condition="'$(_IsConfigurationChanged)' == 'true'"/>-->
+	</Target>
+
+	<Target Name="CLIOnConfigChangePostBuild" AfterTargets="Build">
+		<!-- Write current configuration to PreviousConfigurationFile -->
+		<WriteLinesToFile File="$(PreviousConfigurationFile)" Lines="$(Configuration)" Overwrite="true" />
+	</Target>
+	
+</Project>

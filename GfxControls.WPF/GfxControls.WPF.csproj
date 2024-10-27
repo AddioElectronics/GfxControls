@@ -8,17 +8,17 @@
 		<Platforms>x64;x86</Platforms>
 		<BaseOutputPath>$(SolutionDir)bin</BaseOutputPath>
 		<SignAssembly>False</SignAssembly>
-		<Title>GfxControls.WPF</Title>
+		<Title>$(ProjectName)</Title>
 		<Company>Addio Electronics, Xorrupt</Company>
 		<Authors>Addio</Authors>
-		<AssemblyName>GfxControls.WPF</AssemblyName>
+		<AssemblyName>$(ProjectName)</AssemblyName>
 		<Description>UI controls for embedding a DirectX, OpenGL, or other graphics API window within a WPF application.</Description>
-		<PackageProjectUrl>https://github.com/AddioElectronics/WpfGfxControls</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/AddioElectronics/GfxControls</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/AddioElectronics/GfxControls</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>WPF, DX, DirectX, D3D, D3D11, 11, DX11, Control, Host, Embed, Window, DXGI, GL, GFX, UI, OpenGL, SharpDX, OpenTK, Vulkan</PackageTags>
-		<AssemblyVersion>0.1.0.0</AssemblyVersion>
+		<AssemblyVersion>0.1.1.0</AssemblyVersion>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<Product>GfxControls</Product>
 	</PropertyGroup>
@@ -47,6 +47,66 @@
 	<PropertyGroup Condition="'$(Configuration)' == 'Debug_NetCore' or '$(Configuration)' == 'Release_NetCore'">
 		<TargetFrameworks>net8.0-windows;net6.0-windows;netcoreapp3.1-windows</TargetFrameworks>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_net6.0|x64'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_net6.0|x86'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_net6.0|x64'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_net6.0|x86'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_netcore3.1|x64'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_netcore3.1|x86'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_netcore3.1|x64'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_netcore3.1|x86'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_v4.7|x64'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_v4.7|x86'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_v4.7|x64'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_v4.7|x86'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_NetCore|x64'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_NetCore|x86'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_NetCore|x64'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_NetCore|x86'">
+	  <Deterministic>True</Deterministic>
+	</PropertyGroup>
 	<ItemGroup>
 	  <None Include="..\LICENSE">
 	    <Pack>True</Pack>
@@ -64,5 +124,6 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\GfxControls.CLI\GfxControls.CLI.vcxproj" />
 	</ItemGroup>
+	<Import Project="..\GfxControls.Shared\GfxControls.Shared.projitems" Label="Shared" />
 
 </Project>

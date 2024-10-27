@@ -25,7 +25,7 @@ namespace GfxControls::CLI
 
 
 	public:
-		D3D11Host(IntPtr parentHwnd, UINT width, UINT height);
+		D3D11Host(IntPtr parentHwnd, UINT width, UINT height, bool forwardMessages);
 		~D3D11Host();
 
 		void UpdateWindowSize(UINT width, UINT height);

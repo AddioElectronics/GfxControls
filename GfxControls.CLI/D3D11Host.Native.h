@@ -6,6 +6,7 @@ namespace GfxControls::Native
 	{
 	private:
 		HWND _hWnd = nullptr;
+		HWND _parentHWnd = nullptr;
 
 		IDXGIFactory* _factory = nullptr;		
 		ID3D11Device* _d3dDevice = nullptr;
@@ -18,10 +19,11 @@ namespace GfxControls::Native
 		UINT _height = 0;
 
 		bool _initialized = false;
+		bool _forwardMessages = false;
 		bool _isDisposed = false;
 
 	public:
-		D3D11HostNative(HWND parentHWnd, UINT width, UINT height);
+		D3D11HostNative(HWND parentHWnd, UINT width, UINT height, bool forwardMessages);
 		~D3D11HostNative();
 
 		void UpdateWindowSize(UINT width, UINT height);

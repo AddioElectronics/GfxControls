@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>385404dd-1237-4dbe-9f52-5986987d6223</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GfxControls.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Interop\NativeMethods.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interop\POINT.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interop\RECT.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interop\TRACKMOUSEEVENT.cs" />
+  </ItemGroup>
+</Project>

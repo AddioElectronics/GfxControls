@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SharpDXExample": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

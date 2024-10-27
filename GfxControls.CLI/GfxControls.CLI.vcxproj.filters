@@ -33,6 +33,12 @@
     <ClInclude Include="D3D11Host.Native.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="POINT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RECT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp">
@@ -44,13 +50,13 @@
     <ClCompile Include="HResultException.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Size.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="D3D11Host.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="D3D11Host.Native.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InteropTypes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -89,7 +89,7 @@
     <Keyword>NetCoreCProj</Keyword>
     <RootNamespace>WpfDirectXHostCLI</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <!-- <TargetFramework>net8.0</TargetFramework> -->
+	<TargetFramework>v4.7</TargetFramework>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <WindowsTargetPlatformMinVersion>7.0</WindowsTargetPlatformMinVersion>
     <ProjectName>GfxControls.CLI</ProjectName>
@@ -407,6 +407,8 @@
     <ManagedAssembly>true</ManagedAssembly>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\CLI\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
+    <CustomBuildBeforeTargets>
+    </CustomBuildBeforeTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_NetCore|x64'">
     <ManagedAssembly>true</ManagedAssembly>
@@ -441,6 +443,10 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_NetCore|x64'">
     <ClCompile>
@@ -454,6 +460,10 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_v4.7|x64'">
     <ClCompile>
@@ -467,6 +477,10 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_netcore3.1|x64'">
     <ClCompile>
@@ -480,6 +494,10 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_net6.0|x64'">
     <ClCompile>
@@ -493,6 +511,10 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -506,6 +528,10 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_NetCore|Win32'">
     <ClCompile>
@@ -519,6 +545,10 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_v4.7|Win32'">
     <ClCompile>
@@ -532,6 +562,10 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_netcore3.1|Win32'">
     <ClCompile>
@@ -545,6 +579,10 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_net6.0|Win32'">
     <ClCompile>
@@ -558,6 +596,10 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -571,6 +613,10 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_NetCore|Win32'">
     <ClCompile>
@@ -584,6 +630,10 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_v4.7|Win32'">
     <ClCompile>
@@ -597,6 +647,10 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_netcore3.1|Win32'">
     <ClCompile>
@@ -610,6 +664,10 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_net6.0|Win32'">
     <ClCompile>
@@ -623,6 +681,10 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -636,6 +698,14 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_NetCore|x64'">
     <ClCompile>
@@ -649,6 +719,10 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_v4.7|x64'">
     <ClCompile>
@@ -662,6 +736,10 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_netcore3.1|x64'">
     <ClCompile>
@@ -675,6 +753,10 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_net6.0|x64'">
     <ClCompile>
@@ -688,12 +770,18 @@
     <Link>
       <AdditionalDependencies>user32.lib;dxgi.lib;d3d11.lib</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="D3D11Host.h" />
     <ClInclude Include="D3D11Host.Native.h" />
     <ClInclude Include="HResultException.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="POINT.h" />
+    <ClInclude Include="RECT.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Size.h" />
   </ItemGroup>
@@ -724,7 +812,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_netcore3.1|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_net6.0|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Size.cpp" />
+    <ClCompile Include="InteropTypes.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />
@@ -735,4 +823,5 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <Import Project="$(ProjectDir)\OnConfigChange.targets" /> 
 </Project>
