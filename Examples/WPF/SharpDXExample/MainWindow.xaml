@@ -1,0 +1,23 @@
+﻿<Window x:Class="Example1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Example1"
+        xmlns:DirectX="clr-namespace:GfxControls.WPF.DirectX;assembly=GfxControls.WPF"
+        mc:Ignorable="d"
+        Title="D3D11Host SharpDX Example" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="LabelTop" Text="Example1: Rotating Cube" FontSize="16" HorizontalAlignment="Center"/>
+        <DirectX:D3D11Host x:Name="dxHost" Grid.Row="1" />
+        <TextBlock x:Name="LabelBottom" Text="" Grid.Row="2" FontSize="16" HorizontalAlignment="Center" />
+    </Grid>
+</Window>
