@@ -1,5 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+	<Import Project="..\Common.props" />
+	
 	<PropertyGroup>
 		<TargetFramework>net8.0-windows</TargetFramework>
 		<Nullable>enable</Nullable>
@@ -19,9 +21,10 @@
 		<RepositoryUrl>https://github.com/AddioElectronics/GfxControls</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>WPF, DX, DirectX, D3D, D3D11, 11, DX11, Control, Host, Embed, Window, DXGI, GL, GFX, UI, OpenGL, SharpDX, OpenTK, Vulkan</PackageTags>
-		<AssemblyVersion>0.1.1.0</AssemblyVersion>
+		<AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<Product>GfxControls</Product>
+		<FileVersion>$(VersionPrefix)</FileVersion>
 	</PropertyGroup>
 
 	<!-- Target .NET 8 for Debug and Release -->

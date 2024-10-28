@@ -21,10 +21,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinForms", "WinForms", "{74
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpDXExample", "Examples\WinForms\SharpDXExample\SharpDXExample.csproj", "{42E31408-AB08-4F8E-BCA8-21EE6C1AE6FA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{8F298AB3-E6CC-4E52-8183-6F359E455C66}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{EB51E380-3C0E-4A7B-A69F-AF0DC5140405}"
 	ProjectSection(SolutionItems) = preProject
-		Scripts\cli-on-config-change.cmd = Scripts\cli-on-config-change.cmd
-		Scripts\LastConfig.txt = Scripts\LastConfig.txt
+		Common.props = Common.props
 	EndProjectSection
 EndProject
 Global

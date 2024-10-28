@@ -17,8 +17,6 @@ using Vector4 = SharpDX.Vector4;
 using Matrix = SharpDX.Matrix;
 using Point = System.Windows.Point;
 using Size = GfxControls.Size;
-using System.Runtime.InteropServices.JavaScript;
-using System.Windows.Interop;
 
 //https://github.com/sharpdx/SharpDX-Samples/blob/master/Desktop/Direct3D11/MiniCube/Program.cs
 namespace Example1

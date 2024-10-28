@@ -5,7 +5,7 @@
 		<PreviousConfigurationFile>$(SolutionDir)ConfigCache\PreviousConfig.txt</PreviousConfigurationFile>
 	</PropertyGroup>
 	
-	<Target Name="CLIOnConfigChangePreBuild" BeforeTargets="ResolvePackageAssets;ResolveNuGetPackageAssets">
+	<Target Name="CLIOnConfigChangePreBuild" BeforeTargets="ResolvePackageAssets;ResolveNuGetPackageAssets;Clean">
 		<Message Text="Test" Importance="high"/>
 		
 		<!-- Initialize configuration changed property -->
@@ -40,6 +40,9 @@
 		<Exec Command="rmdir /s /q &quot;$(SolutionDir)bin\x86&quot;"
 				 Condition="'$(_IsConfigurationChanged)' == 'true'" />
 
+		<Exec Command="rmdir /s /q &quot;$(SolutionDir)bin\Win32&quot;"
+				 Condition="'$(_IsConfigurationChanged)' == 'true'" />
+
 
 		<!-- Clean CLI Project-->
 		<Message Text="Cleaning CLI intermediate directories"
@@ -50,9 +53,6 @@
 				 Condition="'$(_IsConfigurationChanged)' == 'true'" />
 
 		<Exec Command="rmdir /s /q &quot;$(SolutionDir)GfxControls.CLI\GfxControls.CLI&quot;"
-				 Condition="'$(_IsConfigurationChanged)' == 'true'" />
-
-		<Exec Command="rmdir /s /q &quot;$(SolutionDir)GfxControls.CLI\NetFramework&quot;"
 				 Condition="'$(_IsConfigurationChanged)' == 'true'" />
 
 		<Exec Command="rmdir /s /q &quot;$(SolutionDir)GfxControls.CLI\x64&quot;"
@@ -82,13 +82,17 @@
 		<MSBuild Projects="$(SolutionDir)GfxControls.CLI\GfxControls.CLI.vcxproj" Targets="Restore"
 				 Condition="'$(_IsConfigurationChanged)' == 'true'"/>
 		
-		<!--<Exec Command="&quot;$(VisualStudioCmdPrompt)&quot; x64 &amp;&amp; msbuild &quot;$(SolutionDir)GfxControls.CLI\GfxControls.CLI.vcxproj&quot; /t:Restore"
-			  Condition="'$(_IsConfigurationChanged)' == 'true'"/>-->
-	</Target>
+		<Exec Command="&quot;$(VisualStudioCmdPrompt)&quot; $(Platform) &amp;&amp; msbuild &quot;$(SolutionDir)GfxControls.CLI\GfxControls.CLI.vcxproj&quot; /t:Restore"
+			  Condition="'$(_IsConfigurationChanged)' == 'true'"
+			  ContinueOnError="true"/>
 
-	<Target Name="CLIOnConfigChangePostBuild" AfterTargets="Build">
 		<!-- Write current configuration to PreviousConfigurationFile -->
 		<WriteLinesToFile File="$(PreviousConfigurationFile)" Lines="$(Configuration)" Overwrite="true" />
 	</Target>
+
+	<!--<Target Name="CLIOnConfigChangePostBuild" AfterTargets="Build">
+		--><!-- Write current configuration to PreviousConfigurationFile --><!--
+		<WriteLinesToFile File="$(PreviousConfigurationFile)" Lines="$(Configuration)" Overwrite="true" />
+	</Target>-->
 	
 </Project>

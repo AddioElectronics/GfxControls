@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\Common.props" />
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug_NetCore|Win32">
       <Configuration>Debug_NetCore</Configuration>
@@ -89,7 +90,7 @@
     <Keyword>NetCoreCProj</Keyword>
     <RootNamespace>WpfDirectXHostCLI</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-	<TargetFramework>v4.7</TargetFramework>
+    <TargetFramework>v4.7</TargetFramework>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <WindowsTargetPlatformMinVersion>7.0</WindowsTargetPlatformMinVersion>
     <ProjectName>GfxControls.CLI</ProjectName>
@@ -329,15 +330,17 @@
     <ManagedAssembly>true</ManagedAssembly>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\CLI\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_NetCore|Win32'">
     <ManagedAssembly>true</ManagedAssembly>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\CLI\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_v4.7|Win32'">
     <ManagedAssembly>true</ManagedAssembly>
-    <IntDir>NetFramework\$(Configuration)\</IntDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\CLI\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
@@ -345,25 +348,29 @@
     <ManagedAssembly>true</ManagedAssembly>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\CLI\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_net6.0|Win32'">
     <ManagedAssembly>true</ManagedAssembly>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\CLI\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ManagedAssembly>true</ManagedAssembly>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\CLI\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_NetCore|Win32'">
     <ManagedAssembly>true</ManagedAssembly>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\CLI\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_v4.7|Win32'">
     <ManagedAssembly>true</ManagedAssembly>
-    <IntDir>NetFramework\$(Configuration)\</IntDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\CLI\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
@@ -371,25 +378,29 @@
     <ManagedAssembly>true</ManagedAssembly>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\CLI\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_net6.0|Win32'">
     <ManagedAssembly>true</ManagedAssembly>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\CLI\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ManagedAssembly>true</ManagedAssembly>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\CLI\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_NetCore|x64'">
     <ManagedAssembly>true</ManagedAssembly>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\CLI\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_v4.7|x64'">
     <ManagedAssembly>true</ManagedAssembly>
-    <IntDir>NetFramework\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\CLI\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
@@ -397,11 +408,13 @@
     <ManagedAssembly>true</ManagedAssembly>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\CLI\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_net6.0|x64'">
     <ManagedAssembly>true</ManagedAssembly>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\CLI\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ManagedAssembly>true</ManagedAssembly>
@@ -417,7 +430,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_v4.7|x64'">
     <ManagedAssembly>true</ManagedAssembly>
-    <IntDir>NetFramework\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\CLI\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
@@ -436,7 +449,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0_OR_GREATER;NET8_0;NET8_0_OR_GREATER;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0_OR_GREATER;NET8_0;NET8_0_OR_GREATER;_DEBUG;%(PreprocessorDefinitions);VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -453,7 +466,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0_OR_GREATER;NET8_0;NET8_0_OR_GREATER;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0_OR_GREATER;NET8_0;NET8_0_OR_GREATER;_DEBUG;%(PreprocessorDefinitions);VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -470,7 +483,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions);NET_FRAMEWORK4_7;NET_FRAMEWORK;NET_FRAMEWORK4_7_OR_GREATER</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions);NET_FRAMEWORK4_7;NET_FRAMEWORK;NET_FRAMEWORK4_7_OR_GREATER;VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -487,7 +500,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions);NETCOREAPP;NETCOREAPP_3_1;NETCOREAPP;NETCOREAPP3_1;NETCOREAPP3_1_OR_GREATER</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions);NETCOREAPP;NETCOREAPP_3_1;NETCOREAPP;NETCOREAPP3_1;NETCOREAPP3_1_OR_GREATER;VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -504,7 +517,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0;NET6_0_OR_GREATER;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0;NET6_0_OR_GREATER;_DEBUG;%(PreprocessorDefinitions);VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -521,7 +534,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0_OR_GREATER;NET8_0;NET8_0_OR_GREATER;WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0_OR_GREATER;NET8_0;NET8_0_OR_GREATER;WIN32;_DEBUG;%(PreprocessorDefinitions);VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -538,7 +551,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0_OR_GREATER;NET8_0;NET8_0_OR_GREATER;WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0_OR_GREATER;NET8_0;NET8_0_OR_GREATER;WIN32;_DEBUG;%(PreprocessorDefinitions);VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -555,7 +568,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions);NET_FRAMEWORK4_7;NET_FRAMEWORK;NET_FRAMEWORK4_7_OR_GREATER</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions);NET_FRAMEWORK4_7;NET_FRAMEWORK;NET_FRAMEWORK4_7_OR_GREATER;VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -572,7 +585,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions);NETCOREAPP;NETCOREAPP3_1;NETCOREAPP3_1_OR_GREATER</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions);NETCOREAPP;NETCOREAPP3_1;NETCOREAPP3_1_OR_GREATER;VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -589,7 +602,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0;NET6_0_OR_GREATER;WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0;NET6_0_OR_GREATER;WIN32;_DEBUG;%(PreprocessorDefinitions);VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -606,7 +619,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0_OR_GREATER;NET8_0;NET8_0_OR_GREATER;WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0_OR_GREATER;NET8_0;NET8_0_OR_GREATER;WIN32;NDEBUG;%(PreprocessorDefinitions);VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -623,7 +636,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0_OR_GREATER;NET8_0;NET8_0_OR_GREATER;WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0_OR_GREATER;NET8_0;NET8_0_OR_GREATER;WIN32;NDEBUG;%(PreprocessorDefinitions);VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -640,7 +653,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions);NET_FRAMEWORK4_7;NET_FRAMEWORK;NET_FRAMEWORK4_7_OR_GREATER</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions);NET_FRAMEWORK4_7;NET_FRAMEWORK;NET_FRAMEWORK4_7_OR_GREATER;VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -657,7 +670,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions);NETCOREAPP;NETCOREAPP3_1;NETCOREAPP3_1_OR_GREATER</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions);NETCOREAPP;NETCOREAPP3_1;NETCOREAPP3_1_OR_GREATER;VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -674,7 +687,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0;NET6_0_OR_GREATER;WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0;NET6_0_OR_GREATER;WIN32;NDEBUG;%(PreprocessorDefinitions);VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -691,7 +704,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0_OR_GREATER;NET8_0;NET8_0_OR_GREATER;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0_OR_GREATER;NET8_0;NET8_0_OR_GREATER;NDEBUG;%(PreprocessorDefinitions);VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -712,7 +725,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0_OR_GREATER;NET8_0;NET8_0_OR_GREATER;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0_OR_GREATER;NET8_0;NET8_0_OR_GREATER;NDEBUG;%(PreprocessorDefinitions);VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -729,7 +742,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);NET_FRAMEWORK4_7;NET_FRAMEWORK;NET_FRAMEWORK4_7_OR_GREATER</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);NET_FRAMEWORK4_7;NET_FRAMEWORK;NET_FRAMEWORK4_7_OR_GREATER;VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -746,7 +759,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);NDEBUG;NETCOREAPP;NETCOREAPP3_1;NETCOREAPP3_1_OR_GREATER</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);NDEBUG;NETCOREAPP;NETCOREAPP3_1;NETCOREAPP3_1_OR_GREATER;VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -763,7 +776,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0;NET6_0_OR_GREATER;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NETCOREAPP3_1_OR_GREATER;NET6_0;NET6_0_OR_GREATER;NDEBUG;%(PreprocessorDefinitions);VERSION_PREFIX="$(VersionPrefix)";L_VERSION_PREFIX=L"$(VersionPrefix)"</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
@@ -823,5 +836,5 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-  <Import Project="$(ProjectDir)\OnConfigChange.targets" /> 
+  <Import Project="$(ProjectDir)\OnConfigChange.targets" />
 </Project>
