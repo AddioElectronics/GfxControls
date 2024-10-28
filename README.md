@@ -1,8 +1,30 @@
-# GfxControls
+﻿# GfxControls
+**Version 0.1.1**
 
 **GfxControls** is a lightweight C# library containing WPF and WinForms controls that enables embedding a DirectX, OpenGL, and Vulkan windows within an application.
 
-**Note:** _Only DirectX is currently available._
+## Current Support
+
+| Framework | DirectX | OpenGL | Vulkan |
+|-----------|---------|--------|--------|
+| WPF       | ✔       | ✖      | ✖      |
+| WinForms  | ✔       | ✖      | ✖      |
+
+---
+
+### API Version Support
+
+| API       | Version | WPF | WinForms |
+|-----------|---------|-----|----------|
+| **DirectX** | 9    | ✖| ✖|
+|            | 10    | ✖| ✖|
+|            | 11    | ✔| ✔|
+|            | 12    | ✖| ✖|
+| **OpenGL** | 3.3   | ✖| ✖|
+|            | 4.6   | ✖| ✖|
+| **Vulkan** | 1.0   | ✖| ✖|
+|            | 1.1   | ✖| ✖|
+
 
 ## Getting Started
 
@@ -43,8 +65,8 @@ SharpDX.Direct3D11.DeviceContext context = ComObject.FromPointer<SharpDX.Direct3
 ```
 
 **Explore These Example Projects**:
-- [WPF SharpDX Example](https://github.com/AddioElectronics/GfxControls/Examples/WPF/SharpDXExample)
-- [WinForms SharpDX Example](https://github.com/AddioElectronics/GfxControls/Examples/WinForms/SharpDXExample)
+- [WPF SharpDX Example](https://github.com/AddioElectronics/GfxControls/tree/main/Examples/WPF/SharpDXExample)
+- [WinForms SharpDX Example](https://github.com/AddioElectronics/GfxControls/tree/main/Examples/WinForms/SharpDXExample)
 - **WPF CLI Example** _(Coming Soon)_
 
 ### OpenGL
@@ -58,7 +80,8 @@ SharpDX.Direct3D11.DeviceContext context = ComObject.FromPointer<SharpDX.Direct3
 ## Building the Project
 
 1. **Select Configuration**
-   - Choose the build configuration you need, such as `Debug`, `Release`, or any custom configurations. The project includes multiple configurations for different .NET frameworks, including .NET 8, .NET 6, .NET Core 3.1, and .NET Framework 4.7.
+   - Choose the build configuration you need, such as `Debug`, `Release`, or any custom configurations. 
+   - The project includes multiple configurations for different .NET frameworks, including .NET 8, .NET 6, .NET Core 3.1, and .NET Framework 4.7.
 
 2. **Restore NuGet Packages (Optional)**
    - Open the `Package Manager Console` in Visual Studio and run:
@@ -82,3 +105,7 @@ If the **GfxControls.CLI** does not build after changing configurations or frame
 - **Restore NuGet Packages** using MSBuild.
 - **Reload the Project** in Visual Studio to ensure settings are updated.
 - **Delete Intermediate and Output Directories** like `bin`, `obj` and `Framework` if any build issues persist.
+
+## License
+
+[GNU AGPLv3](https://github.com/AddioElectronics/GfxControls/blob/main/LICENSE)
